@@ -1,0 +1,30 @@
+<div *ngIf="contact">
+    <h4>Contact</h4>
+    <div>
+        <label><strong>Name:</strong></label> {{ contact.name }}
+    </div>
+    <div>
+        <label><strong>Surname:</strong></label> {{ contact.surname }}
+    </div>
+    <div>
+        <label><strong>Number:</strong></label>
+        {{ contact.number }}
+    </div>
+    <div>
+        <label><strong>Birthday:</strong></label>
+        {{ contact.birthday }}
+    </div>
+
+    <div>
+        <label><strong>Address:</strong></label>
+        {{ contact.address }}
+    </div>
+
+    <button class="btn btn-outline-dark mr2" (click)="onDelete(contact)">
+        Delete
+    </button>
+
+    <button type="submit" [disabled]= "'false'" class="btn btn-outline-dark m-2">
+        Edit
+    </button>
+</div>

@@ -1,0 +1,8 @@
+<div class="input-group mb-5">
+    <input type="text" class="form-control col-lg-6 col-6" placeholder="{{ placeText }}" [(ngModel)]="searchText"  list="names"/>
+    <div class="input-group-append col-lg-3 col-3 m-1">
+        <button class="btn btn-outline-secondary" type="button" (click)="onSearch()">
+            Search
+        </button>
+    </div>
+</div>

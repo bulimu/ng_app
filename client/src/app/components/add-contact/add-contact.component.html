@@ -1,0 +1,47 @@
+<form class="content" [formGroup]="exform" (ngSubmit)="submitData()">
+    <h3 class="text-center">Add Contact</h3>
+    <div class="row">
+
+        <div class="mt-2 mb-2 col-lg-6 col-6">
+
+            <input type="text" formControlName="name" class="form-control" placeholder="*Firstname">
+            <small *ngIf="name.invalid && (name.touched || name.dirty)" class="text-danger">
+                <span *ngIf="name.errors?.required">*Name is Required</span>
+                <span *ngIf="name.errors?.pattern">*Enter only charactors</span>
+            </small>
+        </div>
+
+        <div class="mt-2 mb-2 col-lg-6 col-6">
+            <input type="text" formControlName="surname" class="form-control" placeholder="*Lastname">
+            <small *ngIf="surname.invalid && (surname.touched || surname.dirty)" class="text-danger">
+                <span *ngIf="surname.errors?.required">*Name is Required</span>
+                <span *ngIf="surname.errors?.pattern">*Enter only charactors</span>
+            </small>
+        </div>
+
+        <div class="mt-2 mb-2 col-lg-12 col-12">
+            <input type="text" formControlName="number" class="form-control" placeholder="*Phone">
+            <small *ngIf="number.invalid && (number.touched || number.dirty)" class="text-danger">
+                <span *ngIf="number.errors?.required">*Phone is Required</span>
+                <span *ngIf="number.errors?.pattern">*Minimum length 10,numbers are only allowed</span>
+            </small>
+        </div>
+
+        <div class="mt-2 mb-2 col-lg-12 col-12">
+            <input type="text" formControlName="birthday" class="form-control" placeholder="Birthday (DD.MM.YYYY)">
+            <small *ngIf="birthday.invalid && (birthday.touched || birthday.dirty)" class="text-danger">
+                <span *ngIf="birthday.errors?.pattern">Format: DD.MM.YYYY</span>
+            </small>
+        </div>
+
+        <div class="mt-2 mb-2 col-lg-12 col-12">
+            <textarea formControlName="address" class="form-control" placeholder="Address"></textarea>
+        </div>
+
+        <div class="mt-4 mb-2 col-lg-6 col-6">
+            <button class="btn btn-primary" [disabled]="exform.invalid">Submit</button>
+        </div>
+    </div>
+
+
+</form>

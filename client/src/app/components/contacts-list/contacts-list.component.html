@@ -1,0 +1,31 @@
+<div class="content">
+  <div class="row">
+
+    <div class="mt-2 mb-2 col-lg-8 col-8">
+      <app-seachbar [placeText]="'Search by name or surname'" (onSearchName)="searchName($event)">
+      </app-seachbar>
+    </div>
+
+    <div class="mt-2 mb-2 col-lg-5 col-5">
+      <h4>Contacts List</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let contact of contacts; let i = index" [class.active]="i == currentIndex"
+          (click)="setActiveContact(contact, i)">
+          {{ contact.name + ' ' + contact.surname }}
+        </li>
+      </ul>
+    </div>
+
+    <div class=" mt-2 mb-2 col-lg-5 col-5">
+      <div *ngIf="currentIndex > -1">
+        <app-contact-details [contact]="currentContact" (onDeleteContact)="deleteContact(currentContact)">
+        </app-contact-details>
+      </div>
+
+      <div *ngIf="currentIndex === -1">
+        <br />
+        <p>Please click on a contact...</p>
+      </div>
+    </div>
+  </div>
+</div>
