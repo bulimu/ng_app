@@ -7,6 +7,7 @@ import { ContactService } from 'src/app/services/contact.service';
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contacts-list.component.scss']
 })
+
 export class ContactsListComponent implements OnInit {
 
   contacts: Contact[] = [];
@@ -56,6 +57,5 @@ export class ContactsListComponent implements OnInit {
         error => {
           console.log(error);
         });
-
   }
 }

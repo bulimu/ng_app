@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './seachbar.component.html',
   styleUrls: ['./seachbar.component.scss']
 })
+
 export class SeachbarComponent implements OnInit {
 
   searchText:string = '';

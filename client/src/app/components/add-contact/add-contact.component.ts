@@ -9,10 +9,10 @@ import { ContactService } from 'src/app/services/contact.service';
   templateUrl: './add-contact.component.html',
   styleUrls: ['./add-contact.component.scss']
 })
+
 export class AddContactComponent implements OnInit {
 
   exform: any;
-
   constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
@@ -32,7 +32,6 @@ export class AddContactComponent implements OnInit {
   }
 
   submitData(): void {
-
     const newContact: Contact = {
       name: this.exform.value.name,
       surname: this.exform.value.surname,
@@ -42,7 +41,6 @@ export class AddContactComponent implements OnInit {
     };
 
     if (this.exform.valid) {
-
       this.contactService.create(newContact)
         .subscribe(
           data => {
