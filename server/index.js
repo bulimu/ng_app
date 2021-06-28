@@ -90,9 +90,9 @@ app.route('/contacts/delete/:id').delete((req, res) => {
     if ( contacts.length === filterContact.length ) {
         return res.status(409).send({error: true, msg: 'Contact does not exist'});
     }
-    //save the filtered data
+   
     saveContactData(filterContact)
-   // res.send({success: true, msg: 'User removed successfully'})
+ 
    res.send(filterContact)
 })
 
